@@ -79,4 +79,14 @@ Solidity pragma: `^0.8.24`. OpenZeppelin Contracts v5.x.
 
 ## Status
 
-- Phase 1: Smart Contract Specification — plan drafted at `docs/phase-1-plan.md`, pending user ratification before execution.
+- **Phase 1: Smart Contract Specification — COMPLETE.**
+  - Spec doc: `docs/contract-spec.md` (canonical, 8 revert strings tracked in §8)
+  - Contract: `src/AgentAccessPass.sol` (revert strings match spec verbatim)
+  - Tests: 30 total — 27 unit + 3 invariant (64 runs × 32 depth)
+  - Deploy: `script/Deploy.s.sol` + `.env.example`, dry-run verified, broadcast pending user trigger
+  - Foundry 1.6.0-rc1, OZ v5.6.1 pinned, solc 0.8.24, EVM `paris`
+
+## Next phases (not yet planned)
+
+- Phase 2: Human UI (frontend)
+- Phase 3: Programmatic agent demo
