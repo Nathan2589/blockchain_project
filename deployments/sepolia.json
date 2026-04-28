@@ -1,0 +1,38 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "contracts": {
+    "AgentAccessPass": {
+      "address": "0x2FA94Dd1d27D2EF8CB906297E4280BEe0478ca1F",
+      "deployer": "0x4fCD7551119f6f9156aAf2aA2E569ebA8CE86d2e",
+      "venue": "0x4fCD7551119f6f9156aAf2aA2E569ebA8CE86d2e",
+      "constructorArgs": {
+        "ticketPriceWei": "1000000000000000",
+        "ticketPriceEth": "0.001",
+        "maxSupply": 1000
+      },
+      "deployment": {
+        "transactionHash": "0x6c678a2f65fdeb8c0c9c35856b3703df2ea88bb2bccf1662b36f93b1883fa8cc",
+        "blockNumber": 10749382,
+        "blockHash": "0xba978684bd186f8d92326503a0a7564d1ebc387c72bd9146d85c934a1f710418",
+        "gasUsed": 1011134,
+        "effectiveGasPriceWei": 2969279,
+        "sourceCommit": "1c0c210"
+      },
+      "verification": {
+        "verified": true,
+        "etherscanUrl": "https://sepolia.etherscan.io/address/0x2FA94Dd1d27D2EF8CB906297E4280BEe0478ca1F#code"
+      },
+      "compiler": {
+        "solc": "0.8.24",
+        "evmVersion": "paris",
+        "optimizer": true,
+        "optimizerRuns": 200
+      },
+      "dependencies": {
+        "openzeppelinContracts": "v5.6.1",
+        "forgeStd": "v1.16.0"
+      }
+    }
+  }
+}
