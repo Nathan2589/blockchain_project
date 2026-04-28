@@ -135,16 +135,16 @@ export default function Return() {
                 if (e.key === "Enter") submit()
               }}
             />
-            {qty !== null && loaded ? (
+            {qty === null || qty === 0n ? (
+              <p className="font-mono text-xs text-muted-foreground">
+                quantity must be a positive integer.
+              </p>
+            ) : loaded ? (
               <p className="font-mono text-xs text-muted-foreground">
                 refund = {qty.toString()} × {formatEth(loaded.ticketPrice)} ={" "}
                 <span className="text-foreground">{formatEth(refund)} SETH</span>
               </p>
-            ) : (
-              <p className="font-mono text-xs text-muted-foreground">
-                quantity must be a positive integer.
-              </p>
-            )}
+            ) : null}
             {qty !== null && loaded && qty > loaded.balance ? (
               <p className="font-mono text-xs text-destructive">
                 exceeds your balance ({loaded.balance.toString()} held).

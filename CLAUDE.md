@@ -85,8 +85,15 @@ Solidity pragma: `^0.8.24`. OpenZeppelin Contracts v5.x.
   - Tests: 30 total — 27 unit + 3 invariant (64 runs × 32 depth)
   - Deploy: `script/Deploy.s.sol` + `.env.example`, dry-run verified, broadcast pending user trigger
   - Foundry 1.6.0-rc1, OZ v5.6.1 pinned, solc 0.8.24, EVM `paris`
+  - Deployed to Sepolia at `0x2FA94Dd1d27D2EF8CB906297E4280BEe0478ca1F`, source verified, smoke-test purchase + verifyHolder confirmed live (see `deployments/sepolia.json`).
+
+- **Phase 2: Human UI (frontend) — COMPLETE.**
+  - Vite 8 + React 19 + TS 6 + Tailwind 4 + shadcn 4.5 (radix-nova preset)
+  - Mono-forward (JetBrains Mono primary), zinc base, single emerald accent (oklch 0.596 / 0.765), sharper 4px radius
+  - Four routes: `/create` (wallet generation + V3 keystore download), `/balance` (three role tabs: agent / doorman / venue), `/buy` (purchase flow), `/return` (refund flow)
+  - Shared lib at `src/lib/{contract,wallet,format}.ts`. ABI + deployment metadata synced from `out/` and `deployments/sepolia.json` via `npm run sync` (also runs as `predev` and `prebuild`).
+  - Headless Playwright verification at `frontend/scripts/verify-pages.mjs`: 24 page loads (4 routes × 3 breakpoints × 2 themes) with zero console errors. Live RPC verification needs `.env.local`'s `VITE_SEPOLIA_RPC_URL` populated.
 
 ## Next phases (not yet planned)
 
-- Phase 2: Human UI (frontend)
 - Phase 3: Programmatic agent demo

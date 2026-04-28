@@ -132,16 +132,16 @@ export default function Buy() {
                 if (e.key === "Enter") submit()
               }}
             />
-            {qty !== null && info ? (
+            {qty === null || qty === 0n ? (
+              <p className="font-mono text-xs text-muted-foreground">
+                quantity must be a positive integer.
+              </p>
+            ) : info ? (
               <p className="font-mono text-xs text-muted-foreground">
                 cost = {qty.toString()} × {formatEth(info.ticketPrice)} ={" "}
                 <span className="text-foreground">{formatEth(cost)} SETH</span>
               </p>
-            ) : (
-              <p className="font-mono text-xs text-muted-foreground">
-                quantity must be a positive integer.
-              </p>
-            )}
+            ) : null}
             {qty !== null && info && qty > remaining ? (
               <p className="font-mono text-xs text-destructive">
                 exceeds available supply ({remaining.toString()} left).
