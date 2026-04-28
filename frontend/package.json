@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "sync": "node scripts/sync-abi.mjs",
+    "predev": "npm run sync",
+    "prebuild": "npm run sync",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
