@@ -12,6 +12,8 @@ out/
 .env.*
 !.env.example
 
+address.txt
+
 # Editor / OS
 .DS_Store
 .idea/
